@@ -67,9 +67,9 @@ pip install -r requirements.txt
    python server.py
     ```
 2. The server will be accessible at :
-```arduino
-http://127.0.0.1:5000
-```
+   ```arduino
+   http://127.0.0.1:5000
+   ```
 
 ### Running the Client
 
