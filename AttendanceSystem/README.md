@@ -1,91 +1,101 @@
-Attendance System
-Overview
-This Attendance System uses facial recognition and YOLO object detection to automatically register student attendance. It captures real-time video feed, detects faces, recognizes them, and logs attendance data into an SQLite database. The system features a web interface to view and manage attendance records.
 
-Project Structure
-graphql
-Copy code
-AttendanceSystem/
-│
-├── client.py                 # Main script for capturing video, detecting faces, and sending attendance data
-├── face_recognition_module.py # Module for handling face recognition and loading known faces
-├── train_faces.py            # Script for training the face recognition model with known faces
-├── database_setup.py         # Script for setting up the SQLite database
-├── clear_db.py               # Script for clearing the SQLite database
-│
-├── models/                   # Directory for model files
-│   ├── yolov10s.pt           # YOLOv10 model file
-│
-├── dataset/                  # Directory containing folders with student images for training
-│   ├── student1/
-│   │   ├── img1.jpg
-│   │   ├── img2.jpg
-│   │   └── ...
-│   ├── student2/
-│   │   ├── img1.jpg
-│   │   ├── img2.jpg
-│   │   └── ...
-│   └── ...
-│
-├── templates/                # Directory for HTML templates
-│   └── attendance.html       # HTML file for displaying attendance records
-│
-├── attendance.db             # SQLite database file for storing attendance records
-│
-└── requirements.txt          # File listing the required Python packages
-Setup
-Install Dependencies: Ensure you have Python installed, then install the required packages using:
+# Attendance Marking System
 
-sh
-Copy code
+## Overview
+
+The Attendance Marking System is a facial recognition application that automates attendance tracking for students. It uses computer vision and deep learning techniques to identify students in real-time and record their attendance.
+
+
+## Features
+
+- Real-time facial recognition using YOLO and `face_recognition` libraries.
+- Automatic attendance marking with timestamps.
+- Web interface for displaying attendance records.
+- SQLite database for persistent storage of attendance data.
+- Easy setup and configuration.
+
+## Getting Started
+
+### Prerequisites
+
+- Python 3.x
+- Git
+- Required Python packages (see `requirements.txt`)
+
+
+## Installation
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/cracken23/miniproject2A
+```
+2. Navigate to the project directory:
+```bash
+cd AttendanceSystem
+```
+3. Install dependencies
+```bash
 pip install -r requirements.txt
-Set Up Database: Run the database_setup.py script to set up the SQLite database:
+```
 
-sh
-Copy code
-python database_setup.py
-Train Face Recognition Model: Run the train_faces.py script to train the face recognition model with known faces:
 
-sh
-Copy code
-python train_faces.py
-Run the Client: Start the client script to begin capturing video and logging attendance:
+### Setting Up the Database
 
-sh
-Copy code
-python client.py
-View Attendance Records: Start the Flask web server and navigate to http://127.0.0.1:5000/ to view attendance records:
+ Run the database setup script to create the `attendance.db` file:
+   ```bash
+   python setup_database.py
+```
 
-sh
-Copy code
-flask run
-Scripts
-client.py: Main script for capturing video feed, detecting faces using YOLO, recognizing faces using the face recognition model, and sending attendance data to the server.
-face_recognition_module.py: Module for handling face recognition, including loading known face encodings and recognizing faces.
-train_faces.py: Script for loading images from the dataset directory and training the face recognition model.
-database_setup.py: Script to create the SQLite database and initialize the attendance table.
-clear_db.py: Script to clear all records from the SQLite database.
-Database
-The SQLite database attendance.db stores attendance records with the following schema:
 
-id: Auto-incremented primary key
-student_name: Name of the student
-timestamp: Time when the attendance was recorded (in seconds since epoch)
-HTML Template
-The attendance.html file in the templates directory is used to display attendance records. It fetches records from the Flask server and updates the table every 5 seconds.
+### Training the Model
 
-Requirements
-Python 3.x
-Required Python packages listed in requirements.txt
-Sample requirements.txt
-txt
-Copy code
-flask
-face_recognition
-opencv-python
-requests
-torch
-ultralytics
-Notes
-Ensure that the YOLO model file yolov10s.pt is placed in the models directory.
-The dataset directory should contain subfolders for each student with their images for training.
+1. Prepare your dataset of student images in the `dataset` folder.
+2. Run the training script to generate face encodings:
+   ```bash
+   python train_faces.py
+   ```
+
+### Running the Server
+
+1. Start the Flask server to handle attendance data:
+   ```bash
+   python server.py
+    ```
+2. The server will be accessible at :
+   ```arduino
+   http://127.0.0.1:5000
+   ```
+
+### Running the Client
+
+1. Start the client application:
+   ```bash
+   python client.py
+   ```
+2. Open your web browser and navigate to:
+    ```bash
+    http://127.0.0.1:5000
+    ```
+
+
+
+   
+
+
+
+## Usage
+
+Once the server is running, you can start the client. The webcam will activate, and the application will start recognizing faces. When a student's face is detected, their attendance will be recorded in the database, and the web interface will display the attendance records.
+
+
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
+## Acknowledgments
+
+- [YOLO](https://github.com/AlexeyAB/darknet) for object detection.
+- [face_recognition](https://github.com/ageitgey/face_recognition) for facial recognition.
+- [Flask](https://flask.palletsprojects.com/) for the web framework.
