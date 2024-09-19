@@ -1,14 +1,10 @@
 
 # Attendance Marking System
+
+## Overview
+
 The Attendance Marking System is a facial recognition application that automates attendance tracking for students. It uses computer vision and deep learning techniques to identify students in real-time and record their attendance.
 
-## Features
-
-- Real-time facial recognition using YOLO and `face_recognition` libraries.
-- Automatic attendance marking with timestamps.
-- Web interface for displaying attendance records.
-- SQLite database for persistent storage of attendance data.
-- Easy setup and configuration.
 
 ## Features
 
@@ -29,7 +25,7 @@ The Attendance Marking System is a facial recognition application that automates
 
 ## Installation
 
-1. Install my-project with npm
+1. Clone the repository
 
 ```bash
 git clone https://github.com/cracken23/miniproject2A
