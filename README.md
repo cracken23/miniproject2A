@@ -32,7 +32,7 @@ git clone https://github.com/cracken23/miniproject2A
 ```
 2. Navigate to the project directory:
 ```bash
-cd attendance-marking-system
+cd AttendanceSystem
 ```
 3. Install dependencies
 ```bash
