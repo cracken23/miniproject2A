@@ -60,7 +60,7 @@ pip install -r requirements.txt
 
 1. Start the Flask server to handle attendance data:
    ```bash
-   python server.py
+   python server/server.py
     ```
 2. The server will be accessible at :
    ```arduino
