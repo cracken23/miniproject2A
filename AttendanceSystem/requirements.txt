@@ -1,4 +1,4 @@
-face_recognition
+face-recognition
 opencv-python
 torch
 ultralytics
