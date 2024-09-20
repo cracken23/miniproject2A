@@ -44,7 +44,7 @@ pip install -r requirements.txt
 
  Run the database setup script to create the `attendance.db` file:
    ```bash
-   python setup_database.py
+   python server/db_setup.py
 ```
 
 
