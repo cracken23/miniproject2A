@@ -1,101 +1,70 @@
+# Getting Started with Create React App
 
-# Attendance Marking System
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Overview
+## Available Scripts
 
-The Attendance Marking System is a facial recognition application that automates attendance tracking for students. It uses computer vision and deep learning techniques to identify students in real-time and record their attendance.
+In the project directory, you can run:
 
+### `npm start`
 
-## Features
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-- Real-time facial recognition using YOLO and `face_recognition` libraries.
-- Automatic attendance marking with timestamps.
-- Web interface for displaying attendance records.
-- SQLite database for persistent storage of attendance data.
-- Easy setup and configuration.
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-## Getting Started
+### `npm test`
 
-### Prerequisites
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-- Python 3.x
-- Git
-- Required Python packages (see `requirements.txt`)
+### `npm run build`
 
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-## Installation
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-1. Clone the repository
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-```bash
-git clone https://github.com/cracken23/miniproject2A
-```
-2. Navigate to the project directory:
-```bash
-cd AttendanceSystem
-```
-3. Install dependencies
-```bash
-pip install -r requirements.txt
-```
+### `npm run eject`
 
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-### Setting Up the Database
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
- Run the database setup script to create the `attendance.db` file:
-   ```bash
-   python server/db_setup.py
-```
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-### Training the Model
+## Learn More
 
-1. Prepare your dataset of student images in the `dataset` folder.
-2. Run the training script to generate face encodings:
-   ```bash
-   python train_faces.py
-   ```
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-### Running the Server
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-1. Start the Flask server to handle attendance data:
-   ```bash
-   python server.py
-    ```
-2. The server will be accessible at :
-   ```arduino
-   http://127.0.0.1:5000
-   ```
+### Code Splitting
 
-### Running the Client
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-1. Start the client application:
-   ```bash
-   python client.py
-   ```
-2. Open your web browser and navigate to:
-    ```bash
-    http://127.0.0.1:5000
-    ```
+### Analyzing the Bundle Size
 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
+### Making a Progressive Web App
 
-   
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
+### Advanced Configuration
 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-## Usage
+### Deployment
 
-Once the server is running, you can start the client. The webcam will activate, and the application will start recognizing faces. When a student's face is detected, their attendance will be recorded in the database, and the web interface will display the attendance records.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
+### `npm run build` fails to minify
 
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
-
-## Acknowledgments
-
-- [YOLO](https://github.com/AlexeyAB/darknet) for object detection.
-- [face_recognition](https://github.com/ageitgey/face_recognition) for facial recognition.
-- [Flask](https://flask.palletsprojects.com/) for the web framework.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
